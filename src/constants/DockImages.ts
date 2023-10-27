@@ -1,36 +1,49 @@
 import { Item } from "../types";
 
-export default  [
+export default [
     {
-        url:"/assets/appstore.webp",
-        showDot:true
+        url: "/assets/appstore.webp",
+        showDot: true,
+        action: "",
     },
     {
-        url:"/assets/github.webp",
-        showDot:true
+        url: "/assets/github.webp",
+        showDot: true,
+        action: "",
     },
     {
-        url:"/assets/wallpaper.webp",
-        showDot:false
+        url: "/assets/wallpaper.webp",
+        showDot: false,
+        action: "",
     },
     {
-        url:"/assets/safari.webp",
-        showDot:true
+        url: "/assets/safari.webp",
+        showDot: true,
+        action: "",
     },
     {
-        url:"/assets/vscode.webp",
-        showDot:true
+        url: "/assets/vscode.webp",
+        showDot: true,
+        action: "",
     },
     {
-        url:"/assets/calculator.webp",
-        showDot:false
+        url: "/assets/calculator.webp",
+        showDot: false,
+        action: "",
     },
     {
-        url:"/assets/vscode.webp",
-        showDot:true
+        url: "/assets/vscode.webp",
+        showDot: true,
+        action: "",
     },
     {
-        url:"/assets/vercel.webp",
-        showDot:false
+        url: "/assets/vercel.webp",
+        showDot: false,
+        action: "",
     },
-] as Item[]
+    {
+        url: "/assets/vercel.webp",
+        showDot: false,
+        action: "OpenTerminal",
+    },
+] as Item[];

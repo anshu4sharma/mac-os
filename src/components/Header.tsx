@@ -14,7 +14,7 @@ const Header = () => {
         <p>Window</p>
         <p>Help</p>
       </div>
-      <div className="flex gap-2 items-center">
+      <div className="sm:flex hidden gap-2 items-center">
         <SettingsSvg width={16} height={16} />
         <p>Fri Oct 27</p>
         <p>4:30 PM</p>
