@@ -13,4 +13,5 @@ body {
   width: 100%;
   background-size: cover;
   overflow: hidden;
+  cursor: url('/public/assets/normal-select.svg'), pointer;
 }

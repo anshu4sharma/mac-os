@@ -37,13 +37,13 @@ const App = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <section onContextMenu={handleContextMenu} className="min-h-full w-full ">
-        {openTerminal && <Terminal HandleTerminal={HandleTerminal} />}
+      <section onContextMenu={handleContextMenu} className="h-screen w-full">
         <ContextMenu
           x={contextMenu.x}
           y={contextMenu.y}
           showMenu={contextMenu.show}
         />
+        {openTerminal && <Terminal HandleTerminal={HandleTerminal} />}
       </section>
       <Dock OpenTerminal={HandleTerminal} />
     </div>

@@ -11,7 +11,7 @@ const ContextMenu = ({
 }) => {
   return (
     <div
-      className={`absolute bg-white/10 backdrop-blur-md p-3 text-white border rounded-lg shadow-md max-w-[260px] w-full ${
+      className={`absolute bg-black/10 backdrop-blur-md p-3 text-white border-[0.5px] rounded-lg shadow-md max-w-fit w-full ${
         showMenu ? "block" : "hidden"
       }`}
       style={{ top: y, left: x }}
@@ -19,7 +19,7 @@ const ContextMenu = ({
       <ul>
         {ContextItems.map((item, index) => {
           return (
-            <li key={index} className="p-2 hover:bg-white/10 text-sm cursor-pointer font-medium">
+            <li key={index} className="p-2 hover:bg-white/10 text-sm cursor-pointer font-medium rounded">
               {item.name}
             </li>
           );
