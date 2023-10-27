@@ -21,25 +21,24 @@ const DockItem = ({ id, children, ...props }: DockItemProps) => {
 
   const dimension = useTransform(mouse.position.x, (mouseX) => {
     return (
-      40 +
+      80 +
       38 *
         Math.cos((((mouseX - elCenterX) / (dock.width ?? 0)) * Math.PI) / 2) **
           58
     );
   });
 
-  const spring = useSpring(40, {
+  const spring = useSpring(80, {
     damping: 10,
     stiffness: 150,
     mass: 0.01,
   });
-
   useEffect(() => {
     return dimension.onChange((val) => {
       if (dock?.hovered) {
         spring.set(val);
       } else {
-        spring.set(40);
+        spring.set(80);
       }
     });
   }, [spring, dimension, dock?.hovered]);

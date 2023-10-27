@@ -14,8 +14,11 @@ const DockUi = ({
   return (
     <DockItem>
       <div className="relative flex-col flex h-full w-full items-center justify-center ">
-        <img src={item.url} className="" onClick={() => OpenTerminal(item.action)} />
-        {item.showDot && <div className="flex h-2 w-2 bg-white rounded-full" />}
+        <img
+          src={item.url}
+          className=""
+          onClick={() => OpenTerminal(item.action)}
+        />
       </div>
     </DockItem>
   );
@@ -33,6 +36,7 @@ const Dock = ({ OpenTerminal }: { OpenTerminal: (item: string) => void }) => {
   useEffect(() => {
     setWidth(ref?.current?.clientWidth);
   }, []);
+
   return (
     <MouseProvider>
       <footer className="fixed inset-x-0 bottom-6 z-40 flex w-full justify-center">
@@ -41,9 +45,9 @@ const Dock = ({ OpenTerminal }: { OpenTerminal: (item: string) => void }) => {
             ref={ref}
             onMouseOver={() => setHovered(true)}
             onMouseOut={() => setHovered(false)}
-            className="flex bg-white/10 backdrop-blur-md rounded-2xl p-2"
+            className="flex bg-white/10 min-w-max backdrop-blur-md rounded-2xl p-2"
           >
-            <ul className="flex h-10 items-end justify-center space-x-3">
+            <ul className="flex h-20 items-end justify-center">
               {DockImages.map((item, index) => {
                 return (
                   <DockUi item={item} key={index} OpenTerminal={OpenTerminal} />
