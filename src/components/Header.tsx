@@ -29,7 +29,7 @@ console.log(formattedDate);
         <p>Window</p>
         <p>Help</p>
       </div>
-      <div className="sm:flex hidden gap-2 items-center">
+      <div className="md:flex hidden gap-2 items-center">
         <SettingsSvg width={16} height={16} />
         <span>{formattedDate}</span>
       </div>

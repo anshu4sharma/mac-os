@@ -4,14 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Apply the preload animation to the body element */
 body {
   font-family: "Inter", sans-serif;
   background-image: url('/assets/bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  height: 100dvh;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   overflow: hidden;
-  cursor: url('/public/assets/normal-select.svg'), pointer;
+  cursor: url('/assets/normal-select.svg'), pointer;
+  animation: preload 0.01s forwards;
 }
