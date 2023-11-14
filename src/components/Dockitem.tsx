@@ -21,14 +21,14 @@ const DockItem = ({ id, children, ...props }: DockItemProps) => {
 
   const dimension = useTransform(mouse.position.x, (mouseX) => {
     return (
-      80 +
-      38 *
+      60 +
+      50 *
         Math.cos((((mouseX - elCenterX) / (dock.width ?? 0)) * Math.PI) / 2) **
           58
     );
   });
 
-  const spring = useSpring(80, {
+  const spring = useSpring(60, {
     damping: 10,
     stiffness: 150,
     mass: 0.01,
@@ -38,7 +38,7 @@ const DockItem = ({ id, children, ...props }: DockItemProps) => {
       if (dock?.hovered) {
         spring.set(val);
       } else {
-        spring.set(80);
+        spring.set(60);
       }
     });
   }, [spring, dimension, dock?.hovered]);

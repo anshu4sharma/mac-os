@@ -1,5 +1,5 @@
 import AppleSvg from "../assets/AppleSvg";
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Loader = () => {
   // State to track the progress (between 0 and 100)
@@ -11,8 +11,8 @@ const Loader = () => {
       if (progress < 100) {
         setProgress(progress + 1);
       }
-    }, 50);
-
+    }, 30);
+ 
     return () => clearInterval(interval);
   }, [progress]);
 
@@ -24,9 +24,9 @@ const Loader = () => {
     >
       <AppleSvg height={100} width={100} />
 
-      <div className="w-full bg-gray-200 rounded-md h-2.5 dark:bg-gray-700 max-w-xs mt-10">
+      <div className="w-full rounded-md h-1.5 bg-gray-700 max-w-xs mt-10">
         <div
-          className="bg-white h-2.5 rounded-md"
+          className="bg-white h-1.5 rounded-md"
           style={{ width: `${progress}%` }}
         ></div>
       </div>

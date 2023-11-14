@@ -1,10 +1,10 @@
 import AppleSvg from "../assets/AppleSvg";
 import SettingsSvg from "../assets/SettingsSvg";
-
-const Header = () => {
-  const date = new Date();
+const date = new Date();
 // Get the day of the week, date, and month
-const dayOfWeek = new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(date);
+const dayOfWeek = new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(
+  date
+);
 const dayOfMonth = date.getDate();
 const month = new Intl.DateTimeFormat("en-US", { month: "short" }).format(date);
 
@@ -15,13 +15,12 @@ const ampm = date.getHours() >= 12 ? "PM" : "AM";
 
 // Combine them into the desired format
 const formattedDate = `${dayOfWeek}  ${month} ${dayOfMonth} ${hours}:${minutes} ${ampm}`;
-
-console.log(formattedDate);
+const Header = () => {
   return (
-    <div className="text-lg items-center text-white font-normal flex justify-between bg-white/10 backdrop-blur-md p-2 px-4 h-full">
+    <div className="text-xs items-center text-white font-medium flex justify-between bg-black/20 backdrop-blur-md p-2 px-4 h-full">
       <div className="flex gap-4 items-center">
         <AppleSvg width={20} height={20} />
-        <p className="font-semibold">Finder</p>
+        <p className="font-bold text-sm">Finder</p>
         <p>File</p>
         <p>Edit</p>
         <p>View</p>

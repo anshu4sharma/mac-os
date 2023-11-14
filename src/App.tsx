@@ -4,10 +4,13 @@ import Header from "./components/Header";
 import ContextMenu from "./components/ContextMenu";
 import Terminal from "./components/Terminal";
 import Loader from "./components/Loader";
+import CommandPallete from "./components/CommandPallete";
 
 const App = () => {
   const [contextMenu, setContextMenu] = useState({ x: 0, y: 0, show: false });
   const [openTerminal, SetOpenTerminal] = useState(false);
+  const [showCommandPallete, setshowCommandPallete] = useState(false);
+  setshowCommandPallete;
   const handleContextMenu = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -59,14 +62,31 @@ const App = () => {
       }
     }, 3000); // Replace with your image loading logic
 
+    window.addEventListener("keydown", function (event) {
+      if (event.keyCode === 32) {
+        setshowCommandPallete(true);
+      }
+    });
     // Clear the timeout to handle cases where images don't load
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("keydown", function (event) {
+        if (event.keyCode === 32) {
+          setshowCommandPallete(true);
+        }
+      });
+    };
   }, []);
+
   return (
     <div className="min-h-screen">
       {imagesLoaded ? (
         <>
           <Header />
+          <CommandPallete
+            setshowCommandPallete={setshowCommandPallete}
+            showCommandPallete={showCommandPallete}
+          />
           <section
             onContextMenu={handleContextMenu}
             className="h-screen w-full"

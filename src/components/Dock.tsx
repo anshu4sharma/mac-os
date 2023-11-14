@@ -13,7 +13,7 @@ const DockUi = ({
 }) => {
   return (
     <DockItem>
-      <div className="relative flex-col flex h-full w-full items-center justify-center ">
+      <div title="Created by Anshu Sharma" className="relative flex-col flex h-full w-full items-center justify-center ">
         <img
           src={item.url}
           className=""
@@ -39,15 +39,15 @@ const Dock = ({ OpenTerminal }: { OpenTerminal: (item: string) => void }) => {
 
   return (
     <MouseProvider>
-      <footer className="fixed inset-x-0 bottom-6 z-40 flex w-full justify-center">
+      <footer className="fixed inset-x-0 bottom-2 z-40 flex w-full justify-center">
         <DockContext.Provider value={{ hovered, width }}>
           <nav
             ref={ref}
             onMouseOver={() => setHovered(true)}
             onMouseOut={() => setHovered(false)}
-            className="flex bg-white/10 min-w-max backdrop-blur-md rounded-2xl p-2"
+            className="flex bg-black/10 min-w-max backdrop-blur-md rounded-2xl p-2"
           >
-            <ul className="flex h-20 items-end justify-center">
+            <ul className="flex h-16 items-end justify-center">
               {DockImages.map((item, index) => {
                 return (
                   <DockUi item={item} key={index} OpenTerminal={OpenTerminal} />

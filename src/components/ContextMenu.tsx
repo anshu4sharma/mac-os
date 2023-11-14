@@ -19,7 +19,7 @@ const ContextMenu = ({
       <ul>
         {ContextItems.map((item, index) => {
           return (
-            <li key={index} className="p-2 hover:bg-white/10 text-sm cursor-pointer font-medium rounded">
+            <li key={index} className="p-2 hover:bg-blue-500 text-sm cursor-pointer font-medium rounded">
               {item.name}
             </li>
           );
