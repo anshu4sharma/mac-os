@@ -1,5 +1,6 @@
 import AppleSvg from "../assets/AppleSvg";
 import SettingsSvg from "../assets/SettingsSvg";
+import PopoverComp from "./PopoverComp";
 const date = new Date();
 // Get the day of the week, date, and month
 const dayOfWeek = new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(
@@ -20,13 +21,13 @@ const Header = () => {
     <div className="text-xs items-center text-white font-medium flex justify-between bg-black/20 backdrop-blur-md p-2 px-4 h-full">
       <div className="flex gap-4 items-center">
         <AppleSvg width={20} height={20} />
-        <p className="font-bold text-sm">Finder</p>
-        <p>File</p>
-        <p>Edit</p>
-        <p>View</p>
-        <p>Go</p>
-        <p>Window</p>
-        <p>Help</p>
+        <PopoverComp title="Finder" className={"font-bold text-sm"} />
+        <PopoverComp title="File" />
+        <PopoverComp title="Edit" />
+        <PopoverComp title="View" />
+        <PopoverComp title="Go" />
+        <PopoverComp title="Window" />
+        <PopoverComp title="Help" />
       </div>
       <div className="md:flex hidden gap-2 items-center">
         <SettingsSvg width={16} height={16} />

@@ -80,7 +80,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen">
-      {imagesLoaded ? (
+      {/* {imagesLoaded ? ( */}
         <>
           <Header />
           <CommandPallete
@@ -100,9 +100,9 @@ const App = () => {
           </section>
           <Dock OpenTerminal={HandleTerminal} />
         </>
-      ) : (
+      {/* ) : (
         <Loader />
-      )}
+      )} */}
     </div>
   );
 };
